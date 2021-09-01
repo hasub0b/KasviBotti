@@ -46,10 +46,15 @@ api = tweepy.API(auth)
 # send the message
 def sendMessage(text):
 
+    # check previous DM to prevent unnecessary spam
+    previous_messages = api.sent_direct_messages
+    prevoius_dm = previous_messages[0].message_create['message_data']['text']
+    
     # sending the direct message
-    direct_message = api.send_direct_message(recipient_id, text)
+    if (previous_dm != text):
+        direct_message = api.send_direct_message(recipient_id, text)
 
-    # printing the text of the sent direct message, can be used for debugging
+    # print the text, can be used for debugging
     # print(direct_message.message_create['message_data']['text'])
 
 
