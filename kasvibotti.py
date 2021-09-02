@@ -42,16 +42,15 @@ auth.set_access_token(access_token, access_token_secret)
 # calling the api
 api = tweepy.API(auth)
 
-# send the message
-def sendMessage(text):
+previous_dm = ""
 
-    # check previous DM to prevent unnecessary spam
-    previous_messages = api.sent_direct_messages
-    prevoius_dm = previous_messages[0].message_create['message_data']['text']
+# send the message
+def sendMessage(text)
     
     # sending the direct message
     if (previous_dm != text):
         direct_message = api.send_direct_message(recipient_id, text)
+        previous_dm = text
 
     # print the text, can be used for debugging
     # print(direct_message.message_create['message_data']['text'])
