@@ -25,10 +25,10 @@ GPIO.add_event_detect(channel, GPIO.BOTH, bouncetime=300)  # let us know when th
 GPIO.add_event_callback(channel, callback)  # assign function to GPIO PIN, Run function on change
  
 # assign the values accordingly
-consumer_key = "hnawz3FtbulfqNldgUROu2nfD"
-consumer_secret = "qp1JuM3JrtMg7y0EvtBiqQSdolFO0oU1khITkUjbWgOYtYcXxp"
-access_token = "1431700356707323906-VICQVoJAD3yKpb27c0aOGG72fr3lUW"
-access_token_secret = "penb6MgM5Lqwlwq8wLN2M66RPpREfKR0PVBceOm8HDiWQ"
+consumer_key = ""
+consumer_secret = ""
+access_token = ""
+access_token_secret = ""
 
 # ID of the recipient
 recipient_id = 1249304815
